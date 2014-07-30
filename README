@@ -1,0 +1,12 @@
+mwbench is a set of shell scripts to quickly test MediaWiki for performance
+regressions. It creates a MW checkout, installs it and imports some real-life
+pages from Wikipedia. For performance test, it spawns a local nginx instance
+then makes requests to it.
+
+Instructions:
+1) run install.sh
+2) run bench.sh
+3) scratch your head
+
+
+If something goes wrong, run clean.sh then see above.
