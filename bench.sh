@@ -10,7 +10,6 @@ set -e
 kill_nginx() {
 	ps aux|grep nginx
 	echo "Stopping nginx..."
-	#pkill -9 -x -u `whoami` nginx
 	nginx -p $PWD -c ./nginx.conf -s stop || true
 }
 
@@ -22,6 +21,9 @@ request() {
 }
 
 kill_nginx
+
+echo 'Starting HHVM...'
+hhvm -m server -c ./config.hdf
 
 echo 'Starting a test instance of nginx...'
 nginx -p $PWD -c ./nginx.conf
